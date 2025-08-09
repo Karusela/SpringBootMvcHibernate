@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SpringBootMvcHibernate.iml" filepath="$PROJECT_DIR$/.idea/SpringBootMvcHibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBootMvcHibernate/SpringBootMvcHibernate.iml" filepath="$PROJECT_DIR$/SpringBootMvcHibernate/SpringBootMvcHibernate.iml" />
     </modules>
   </component>
 </project>

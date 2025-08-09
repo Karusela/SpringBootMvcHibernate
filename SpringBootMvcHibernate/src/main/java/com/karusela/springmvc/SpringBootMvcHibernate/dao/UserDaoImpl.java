@@ -3,8 +3,8 @@ package com.karusela.springmvc.SpringBootMvcHibernate.dao;
 import com.karusela.springmvc.SpringBootMvcHibernate.entity.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 @Repository
@@ -15,7 +15,6 @@ public class UserDaoImpl implements UserDao {
 
 
     @Override
-    @SuppressWarnings("unchecked")
     public List<User> getAllUsers() {
         List<User> allUsers = entityManager
                 .createQuery("SELECT u FROM User u", User.class)
@@ -26,7 +25,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void saveUser(User user) {
-        User merged = entityManager.merge(user);
+        entityManager.merge(user);
     }
 
     @Override
@@ -36,8 +35,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void deleteUser(int id) {
-        Query query = entityManager.createQuery("delete from User where id =:userId");
-        query.setParameter("userId", id);
-        query.executeUpdate();
+        User user = entityManager.find(User.class, id);
+        entityManager.remove(user);
     }
 }

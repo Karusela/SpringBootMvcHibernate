@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringBootMvcHibernateApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootMvcHibernateApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootMvcHibernateApplication.class, args);
+    }
 
 }
